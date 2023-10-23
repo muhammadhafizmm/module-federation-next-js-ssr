@@ -11,6 +11,8 @@
   "scripts": {
     "start": "find . -type d -name '.next' -exec rm -rf {} + && concurrently \"cd checkout; npm run dev\" \"cd home; npm run dev\"",
     "build": "find . -type d -name '.next' -exec rm -rf {} +  && concurrently \"cd checkout; npm run build\" \"cd home; npm run build\"",
+    "build:remote": "find . -type d -name '.next' -exec rm -rf {} +  && && concurrently \"cd checkout; npm run build\"",
+    "build:host": "find . -type d -name '.next' -exec rm -rf {} +  && concurrently \"cd home; npm run build\"",
     "serve": "concurrently \"cd checkout; npm run serve\" \"cd home; npm run serve\""
   },
   "dependencies": {
