@@ -27,6 +27,8 @@ module.exports = {
         exposes: {
           './title': './components/exposedTitle.js',
           './checkout': './pages/checkout.js',
+          './shop': './pages/shop.js',
+          './pdp': './pages/p/[...slug].js',
           './pages-map': './pages-map.js',
         },
         remotes: remotes(options.isServer),

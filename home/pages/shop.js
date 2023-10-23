@@ -1,4 +1,4 @@
-import ShopPage from 'shop/shop';
+import ShopPage from 'checkout/shop';
 const Shop = ShopPage;
 Shop.getInitialProps = ShopPage.getInitialProps;
 export default Shop;

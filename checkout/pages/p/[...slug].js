@@ -1,4 +1,10 @@
-import PDPPage from 'shop/pdp';
-const PDP = PDPPage;
-PDP.getInitialProps = PDPPage.getInitialProps;
-export default PDP;
+import { useRouter } from 'next/router'
+
+export default function PDP() {
+  const router = useRouter()
+  const { slug } = router.query
+  return <h1>PDP!!! slug: {slug}</h1>;
+}
+PDP.getInitialProps = async () => {
+  return {};
+};
