@@ -4,7 +4,7 @@ const NextFederationPlugin = require('@module-federation/nextjs-mf');
 const remotes = isServer => {
   const location = isServer ? 'ssr' : 'chunks';
   return {
-    checkout: `checkout@http://localhost:3000/_next/static/${location}/remoteEntry.js`,
+    checkout: `checkout@${process.env.REMOTE_HOST}/_next/static/${location}/remoteEntry.js`,
   };
 };
 module.exports = {
@@ -26,8 +26,8 @@ module.exports = {
         exposes: {},
         remotes: remotes(options.isServer),
         shared: {},
-        extraOptions:{
-          
+        extraOptions: {
+
           exposePages: true
         }
       }),
